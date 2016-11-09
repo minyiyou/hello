@@ -23,6 +23,8 @@ d3.csv("./haha.csv",
 	{
 		var ln = data.length;
 		console.log(data);
+
+
 		var maxy = d3.max(data, function(d){ return d.sold; });
 		var miny = d3.min(data, function(d){ return d.buy; });
 		var lines = d3.line().x(function(d,i){return (ln-i)*(width/ln);})
@@ -33,7 +35,7 @@ d3.csv("./haha.csv",
         ctrl.append("path").data([data]).attr("d", line2).attr("stroke", "green").attr("fill", "none");
     
 x.domain(d3.extent(data, function(d) { return d.DAT; }));
-y.domain([0, d3.max(data, function(d) { return d.sold; })]);
+y.domain([0, maxy]);
 ctrl.append("g").attr("transform", "translate(0," + height + ")").call(d3.axisBottom(x));
 ctrl.append("g").call(d3.axisLeft(y));
 
