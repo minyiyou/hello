@@ -19,10 +19,10 @@ d3.csv("./haha.csv",
 		var miny = d3.min(data, function(d){ return d.buy; });
 		var lines = d3.line().x(function(d,i){return (ln-i)*(width/ln);})
 		.y(function(d){return height-(d.sold-miny)*(height/(maxy-miny))});
-		var lines2 = d3.line().x(function(d,i){return (ln-i)*(width/ln);})
+		var line2 = d3.line().x(function(d,i){return (ln-i)*(width/ln);})
 		.y(function(d){return height-(d.buy-miny)*(height/(maxy-miny))});
 		ctrl.append("path").data([data]).attr("d", lines).attr("stroke", "red").attr("fill", "none");
-        ctrl.append("path").data([data]).attr("d", lines2).attr("stroke", "green").attr("fill", "none");
+        ctrl.append("path").data([data]).attr("d", line2).attr("stroke", "green").attr("fill", "none");
         
 	}
 
