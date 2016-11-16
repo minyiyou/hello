@@ -9,7 +9,7 @@
 <body>
 <div id='wordcloud'></div>
 <script type="text/javascript">
-  d3.csv("./wordcloud.csv",function(data){
+  d3.csv("./wcdata.csv",function(data){
 console.log(data);
 d3.wordcloud()
         .size([800, 400])
